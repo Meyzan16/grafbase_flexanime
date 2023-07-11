@@ -14,7 +14,13 @@ const Project = g.model('Project', {
   image: g.string(),
   liveSiteUrl: g.string(),
   category: g.string().search(),
+  CatrgoryRelation: g.relation(()=>Category),
   createdBy: g.relation(() => User),
+})
+
+const Category = g.model('Category', {
+  id: g.id(),
+  title: g.string(),
 })
 
 
