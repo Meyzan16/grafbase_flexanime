@@ -16,6 +16,7 @@ const Project = g.model('Project', {
   title: g.string().length({min:3}),
   description: g.string(),
   image: g.string(),
+  genre: g.string(),
   liveSiteUrl: g.string(),
   category: g.string().search(),
   CategoryRelation: g.relation(()=>Category),
