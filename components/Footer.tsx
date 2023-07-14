@@ -26,9 +26,9 @@ const Footer = () => {
       <div className='flex flex-col gap-8 w-full '>
 
             <div className="flex items-start flex-col">
-                <Image src="/logo-purple.svg" width={116} height={38} alt="logo" />
 
-                <p className="text-start text-sm font-normal mt-5 max-w-xs">
+
+                <p className="text-start text-sm font-normal mt-10 max-w-xs">
                     Flexanime is a website providing anime advertisements in the world
                 </p>
             </div>

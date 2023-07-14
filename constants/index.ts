@@ -7,10 +7,9 @@
 // ];
   
   export const categoryFilters = [
-    "Frontend",
-    "Backend",
-    "Full-Stack",
-    "Mobile",
+    "One Piece",
+    "Naruto",
+    "Konan",
     "UI/UX",
     "Game Dev",
     "DevOps",
@@ -20,6 +19,18 @@
     "Blockchain",
     "E-commerce",
     "Chatbots"
+  ]
+
+  export const genreFilters = [
+    "Shoujo",
+    "Shounen",
+    "Josei",
+    "Seinen",
+    "Harem",
+    "Harem Reverse",
+    "Shoujo-ai (Girl’s Love)",
+    "Shounen-ai (Boy’s Love)",
+    "Ecchi"
   ]
   
   export const footerLinks = [

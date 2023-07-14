@@ -5,6 +5,7 @@ export type FormState = {
     description: string;
     image: string;
     genre: string;
+    episode: string;
     liveSiteUrl: string;
     category: string;
 };
@@ -14,6 +15,7 @@ export interface ProjectInterface {
     description: string;
     image: string;
     genre: string;
+    episode: string;
     liveSiteUrl: string;
     category: string;
     id: string;
@@ -42,6 +44,8 @@ export interface UserProfile {
     };
 }
 
+
+
 export interface SessionInterface extends Session {
   user: User & {
     id: string;
@@ -56,6 +60,7 @@ export interface ProjectForm {
   description: string;
   image: string;
   genre: string;
+  episode: string;
   liveSiteUrl: string;
   category: string;
 }

@@ -62,6 +62,7 @@ export const authOptions: NextAuthOptions = {
 
         async signIn({ user } : { user: AdapterUser | User}) {
             try {
+                
                 //get  the user if they exist
                 const userExists = await getUser(user?.email as string) as {user?: UserProfile}
 
@@ -82,6 +83,7 @@ export const authOptions: NextAuthOptions = {
         }
     }
 }
+
 
 export async function getCurrentUser() {
     const session = await getServerSession(authOptions) as SessionInterface

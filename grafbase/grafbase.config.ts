@@ -17,9 +17,10 @@ const Project = g.model('Project', {
   description: g.string(),
   image: g.string(),
   genre: g.string(),
+  episode: g.string(),
   liveSiteUrl: g.string(),
   category: g.string().search(),
-  CategoryRelation: g.relation(()=>Category),
+  // CategoryRelation: g.relation(()=>Category),
   createdBy: g.relation(() => User),
 }).auth((rules) => {
   rules.public().read()
@@ -27,7 +28,6 @@ const Project = g.model('Project', {
 })
 
 const Category = g.model('Category', {
-  id: g.id(),
   title: g.string(),
 })
 

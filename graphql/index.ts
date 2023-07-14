@@ -30,7 +30,8 @@ export const createProjectMutation = `
 			project {
 				id
 				title
-                genre
+        genre
+        episode
 				description
 				createdBy {
 					email
@@ -40,6 +41,19 @@ export const createProjectMutation = `
 		}
 	}
 `;
+
+export const createCategoryMutation = `
+	mutation CreateCategory($input: CategoryCreateInput!) {
+		categoryCreate(input: $input) {
+			category {
+				title
+				id
+			}
+		}
+	}
+`;
+
+
 
 export const updateProjectMutation = `
 	mutation UpdateProject($id: ID!, $input: ProjectUpdateInput!) {
@@ -69,7 +83,7 @@ export const deleteProjectMutation = `
 
 export const projectsQuery = `
   query getProjects($category: String, $endcursor: String) {
-    projectSearch(first: 8, after: $endcursor, filter: {category: {eq: $category}}) {
+    projectSearch(first: 20, after: $endcursor, filter: {category: {eq: $category}}) {
       pageInfo {
         hasNextPage
         hasPreviousPage
@@ -79,7 +93,8 @@ export const projectsQuery = `
       edges {
         node {
           title
-          githubUrl
+          genre
+          episode
           description
           liveSiteUrl
           id
@@ -105,7 +120,8 @@ export const getProjectByIdQuery = `
       description
       image
       liveSiteUrl
-      githubUrl
+      genre
+      episode
       category
       createdBy {
         id
@@ -118,21 +134,20 @@ export const getProjectByIdQuery = `
 `;
 
 export const getProjectsOfUserQuery = `
-  query getUserProjects($id: ID!, $last: Int = 4) {
+  query getUserProjects($id: ID!, $last: Int = 9) {
     user(by: { id: $id }) {
       id
       name
       email
       description
       avatarUrl
-      githubUrl
-      linkedinUrl
       projects(last: $last) {
         edges {
           node {
             id
             title
             image
+            genre
           }
         }
       }
